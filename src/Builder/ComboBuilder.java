@@ -1,11 +1,19 @@
-package Builder;
+package builder;
 
-import Model.Combo;
+import model.Combo;
 
+/**
+ * Builder para crear instancias de Combo de manera fluida.
+ */
 public class ComboBuilder {
-    private Combo combo;
 
-    // Constructor que recibe un Combo base
+    private final Combo combo;
+
+    /**
+     * Crea un nuevo ComboBuilder a partir de un Combo base.
+     *
+     * @param combo instancia inicial de Combo
+     */
     public ComboBuilder(Combo combo) {
         this.combo = combo;
     }
@@ -25,6 +33,11 @@ public class ComboBuilder {
         return this;
     }
 
+    /**
+     * Construye y devuelve el Combo configurado.
+     *
+     * @return instancia final de Combo
+     */
     public Combo build() {
         return combo;
     }
