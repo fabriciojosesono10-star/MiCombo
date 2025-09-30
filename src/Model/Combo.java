@@ -1,31 +1,52 @@
-package Model;
+package model;
 
+/**
+ * Representa un Combo de comida con tipo, precio y opciones adicionales.
+ */
 public class Combo {
-    private String tipo;
+
+    // Atributos obligatorios
+    private final String tipo;
+    private final double precioBase;
+
+    // Atributos opcionales
     private String bebida;
     private String acompanamiento;
     private String extra;
-    private double precioBase;
 
+    /**
+     * Constructor principal: tipo y precio son obligatorios.
+     *
+     * @param tipo tipo de combo
+     * @param precioBase precio base del combo
+     */
     public Combo(String tipo, double precioBase) {
         this.tipo = tipo;
         this.precioBase = precioBase;
     }
 
+    /**
+     * Constructor alternativo para inicializar todos los campos.
+     */
+    public Combo(String tipo, double precioBase, String bebida, String acompanamiento, String extra) {
+        this.tipo = tipo;
+        this.precioBase = precioBase;
+        this.bebida = bebida;
+        this.acompanamiento = acompanamiento;
+        this.extra = extra;
+    }
+
+    // Getters
     public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }
-
-    public String getBebida() { return bebida; }
-    public void setBebida(String bebida) { this.bebida = bebida; }
-
-    public String getAcompanamiento() { return acompanamiento; }
-    public void setAcompanamiento(String acompanamiento) { this.acompanamiento = acompanamiento; }
-
-    public String getExtra() { return extra; }
-    public void setExtra(String extra) { this.extra = extra; }
-
     public double getPrecioBase() { return precioBase; }
-    public void setPrecioBase(double precioBase) { this.precioBase = precioBase; }
+    public String getBebida() { return bebida; }
+    public String getAcompanamiento() { return acompanamiento; }
+    public String getExtra() { return extra; }
+
+    // Setters para atributos opcionales
+    public void setBebida(String bebida) { this.bebida = bebida; }
+    public void setAcompanamiento(String acompanamiento) { this.acompanamiento = acompanamiento; }
+    public void setExtra(String extra) { this.extra = extra; }
 
     @Override
     public String toString() {
